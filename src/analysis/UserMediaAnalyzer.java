@@ -5,19 +5,19 @@ import java.util.Map;
 
 public class UserMediaAnalyzer {
 
-    Map<String, Integer> hashtags;
-    int totalLikes;
-    int totalComments;
-    int totalShares;
-    int totalPosts;
-    double engagementRate;
-    String[] users;
-    String[] genders;
-    int[] ages;
-    String[] platforms;
-    int[] followers;
-    int[] following;
-    int[] reelsCount;
+    private Map<String, Integer> hashtags;
+    private int totalLikes;
+    private int totalComments;
+    private int totalShares;
+    private int totalPosts;
+    private double engagementRate;
+    private String[] users;
+    private String[] genders;
+    private int[] ages;
+    private String[] platforms;
+    private int[] followers;
+    private int[] following;
+    private int[] reelsCount;
 
     // Constructor
     public UserMediaAnalyzer(String[] users, String[] genders, int[] ages, String[] platforms, int[] followers,

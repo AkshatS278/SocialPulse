@@ -4,13 +4,13 @@ import java.util.Map;
 
 public class SocialMediaAnalyzer {
 
-    Map<String, Integer> Hashtags;
-    int totalLikes;
-    int totalComments;
-    int totalShares;
-    int totalPosts;
-    double engagementRate;
-    String maxHastags;
+    private Map<String, Integer> Hashtags;
+    private int totalLikes;
+    private int totalComments;
+    private int totalShares;
+    private int totalPosts;
+    private double engagementRate;
+    private String maxHastags;
 
     public String getHastags() {
         return maxHastags;

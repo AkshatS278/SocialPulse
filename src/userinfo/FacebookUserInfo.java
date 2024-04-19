@@ -7,11 +7,11 @@ public class FacebookUserInfo implements User {
     private String gender;
     private int age;
     private String platform;
-    private String followers;
+    private int followers;
     private int highlightReelCount;
     private int posts;
 
-    public FacebookUserInfo(String userName, String gender, int age, String platform, String followers,
+    public FacebookUserInfo(String userName, String gender, int age, String platform, int followers,
             int highlightReelCount, int posts) {
         this.userName = userName;
         this.gender = gender;
@@ -43,7 +43,7 @@ public class FacebookUserInfo implements User {
     }
 
     @Override
-    public String getFollowers() {
+    public int getFollowers() {
         return this.followers;
     }
 

@@ -8,7 +8,7 @@ public interface User {
 
     String getPlatform();
 
-    String getFollowers();
+    int getFollowers();
 
     int getHighlightReelCount();
 
