@@ -1,22 +1,24 @@
 package userinfo;
+
 import user.User;
 
-public class TwitterUserInfo implements User{
+public class TwitterUserInfo implements User {
     private String userName;
     private String gender;
     private int age;
     private String platform;
     private String followers;
-    private int highlight_reel_count;
+    private int highlightReelCount;
     private int posts;
 
-    public TwitterUserInfo(String userName, String gender, int age, String platform, String followers, int highlight_reel_count, int posts) {
+    public TwitterUserInfo(String userName, String gender, int age, String platform, String followers,
+            int highlightReelCount, int posts) {
         this.userName = userName;
         this.gender = gender;
         this.age = age;
         this.platform = platform;
         this.followers = followers;
-        this.highlight_reel_count = highlight_reel_count;
+        this.highlightReelCount = highlightReelCount;
         this.posts = posts;
     }
 
@@ -47,7 +49,7 @@ public class TwitterUserInfo implements User{
 
     @Override
     public int getHighlightReelCount() {
-        return this.highlight_reel_count;
+        return this.highlightReelCount;
     }
 
     public int getPosts() {
