@@ -1,8 +1,9 @@
 package socialMedia;
 
-import user.User;
-
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Facebook implements SocialMediaPlatform {
     private String apiUrl;
@@ -17,26 +18,22 @@ public class Facebook implements SocialMediaPlatform {
         return numberOfPosts;
     }
 
-    // override the fetchData method
     @Override
     public String fetchData() {
-        // json file read krna h
-
+        // Placeholder logic for fetching data from Facebook API
         return "Data fetched from Facebook";
     }
-
-
 
     @Override
     public void setApiUrl(String apiUrl) {
         this.apiUrl = apiUrl;
     }
+
     @Override
     public String getApiUrl() {
         return apiUrl;
     }
 
-    // nested class for a post analysis
     public class FacebookPost {
         private String postTitle;
         private int likes;
@@ -45,7 +42,8 @@ public class Facebook implements SocialMediaPlatform {
         private String postType;
         private ArrayList<String> hashtags;
 
-        public FacebookPost(String postTitle, int likes, int shares, int numberOfComments, String postType, ArrayList<String> hashtags) {
+        public FacebookPost(String postTitle, int likes, int shares, int numberOfComments, String postType,
+                ArrayList<String> hashtags) {
             this.postTitle = postTitle;
             this.likes = likes;
             this.shares = shares;
@@ -77,5 +75,14 @@ public class Facebook implements SocialMediaPlatform {
         public String getPostType() {
             return postType;
         }
+    }
+
+    // Analyze content performance based on hashtags
+    public Map<String, Integer> analyzeContentPerformance(List<String> hashtags) {
+        Map<String, Integer> performanceMetrics = new HashMap<>();
+        for (String hashtag : hashtags) {
+            performanceMetrics.put(hashtag, performanceMetrics.getOrDefault(hashtag, 0) + 1);
+        }
+        return performanceMetrics;
     }
 }

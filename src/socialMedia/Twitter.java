@@ -1,6 +1,9 @@
 package socialMedia;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Twitter implements SocialMediaPlatform {
     private String apiUrl;
@@ -17,7 +20,7 @@ public class Twitter implements SocialMediaPlatform {
 
     @Override
     public String fetchData() {
-        // json file
+        // Placeholder code to simulate fetching data from Twitter API
         return "Data fetched from Twitter";
     }
 
@@ -31,7 +34,7 @@ public class Twitter implements SocialMediaPlatform {
         return apiUrl;
     }
 
-    // creating a class of tweet using the data
+    // Inner class representing a Twitter post
     public class TwitterPost {
         private String tweetContent;
         private int retweets;
@@ -39,7 +42,8 @@ public class Twitter implements SocialMediaPlatform {
         private boolean isExclusive;
         private ArrayList<String> hashtags;
 
-        public TwitterPost(String tweetContent, int retweets, int likes, boolean isExclusive, ArrayList<String> hashtags) {
+        public TwitterPost(String tweetContent, int retweets, int likes, boolean isExclusive,
+                ArrayList<String> hashtags) {
             this.tweetContent = tweetContent;
             this.retweets = retweets;
             this.likes = likes;
@@ -81,6 +85,15 @@ public class Twitter implements SocialMediaPlatform {
 
         public void setExclusive(boolean exclusive) {
             isExclusive = exclusive;
+        }
+
+        // Method to analyze content performance based on hashtags
+        public Map<String, Integer> analyzeContentPerformance(List<String> hashtags) {
+            Map<String, Integer> performanceMetrics = new HashMap<>();
+            for (String hashtag : hashtags) {
+                performanceMetrics.put(hashtag, performanceMetrics.getOrDefault(hashtag, 0) + 1);
+            }
+            return performanceMetrics;
         }
     }
 }

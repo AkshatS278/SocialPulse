@@ -20,13 +20,13 @@ public class SocialMediaAnalyzer {
         return engagementRate;
     }
 
-    public SocialMediaAnalyzer(int totalLikes, int totalComments, int totalShares, int totalPosts,
-                               Map<String, Integer> Hashtags, String platformString) {
+    public SocialMediaAnalyzer(
+            Map<String, Integer> Hashtags, String platformString, int... interactions) {
         this.Hashtags = Hashtags;
-        this.totalLikes = totalLikes;
-        this.totalComments = totalComments;
-        this.totalShares = totalShares;
-        this.totalPosts = totalPosts;
+        this.totalLikes = interactions[0];
+        this.totalComments = interactions[1];
+        this.totalShares = interactions[2];
+        this.totalPosts = interactions[3];
     }
 
     public void performAllAnalysis() {
