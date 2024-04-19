@@ -35,7 +35,7 @@ public class Instagram implements SocialMediaPlatform {
     }
 
     // Inner class representing an Instagram post
-    public class InstagramPost {
+    public static class InstagramPost {
         private String postTitle;
         private String image;
         private String caption;

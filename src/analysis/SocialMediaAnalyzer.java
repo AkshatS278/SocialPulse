@@ -10,10 +10,10 @@ public class SocialMediaAnalyzer {
     private int totalShares;
     private int totalPosts;
     private double engagementRate;
-    private String maxHastags;
+    private String maxHashtags;
 
-    public String getHastags() {
-        return maxHastags;
+    public String getHashtag() {
+        return maxHashtags;
     }
 
     public double getEngagementRate() {
@@ -44,14 +44,14 @@ public class SocialMediaAnalyzer {
         performHashtagAnalysis hashtagAnalysis = new performHashtagAnalysis(Hashtags);
         hashtagAnalysis.run();
         engagementRate.run();
-        this.maxHastags = hashtagAnalysis.getMaxHashtags();
+        this.maxHashtags = hashtagAnalysis.getMaxHashtags();
         this.engagementRate = engagementRate.getEngagementRate();
 
         // Print engagement rate
         System.out.println("Engagement Rate: " + engagementRate.getEngagementRate());
 
         // Print most used hashtag
-        System.out.println("Most Used Hashtag: " + maxHastags);
+        System.out.println("Most Used Hashtag: " + maxHashtags);
 
         System.out.println("Finished Analysis.");
     }
