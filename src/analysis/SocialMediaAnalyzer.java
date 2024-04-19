@@ -20,6 +20,15 @@ public class SocialMediaAnalyzer {
         return engagementRate;
     }
 
+    public SocialMediaAnalyzer(int totalLikes, int totalComments, int totalShares, int totalPosts,
+            Map<String, Integer> Hashtags) {
+        this.Hashtags = Hashtags;
+        this.totalLikes = totalLikes;
+        this.totalComments = totalComments;
+        this.totalShares = totalShares;
+        this.totalPosts = totalPosts;
+    }
+
     public SocialMediaAnalyzer(
             Map<String, Integer> Hashtags, String platformString, int... interactions) {
         this.Hashtags = Hashtags;
@@ -37,8 +46,16 @@ public class SocialMediaAnalyzer {
         engagementRate.run();
         this.maxHastags = hashtagAnalysis.getMaxHashtags();
         this.engagementRate = engagementRate.getEngagementRate();
+
+        // Print engagement rate
+        System.out.println("Engagement Rate: " + engagementRate.getEngagementRate());
+
+        // Print most used hashtag
+        System.out.println("Most Used Hashtag: " + maxHastags);
+
         System.out.println("Finished Analysis.");
     }
+
 }
 
 class calculateEngagementRate implements Runnable {
@@ -93,8 +110,6 @@ class performHashtagAnalysis implements Runnable {
                     keyWithMaxValue = entry.getKey();
                 }
             }
-
-            System.out.println("Most used Hashtag: " + keyWithMaxValue);
 
         } catch (Exception e) {
             System.out.println("Exception caught.");

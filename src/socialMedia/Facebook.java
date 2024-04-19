@@ -2,7 +2,6 @@ package socialMedia;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Facebook implements SocialMediaPlatform {
@@ -18,9 +17,9 @@ public class Facebook implements SocialMediaPlatform {
         return numberOfPosts;
     }
 
+    // override the fetchData method
     @Override
     public String fetchData() {
-        // Placeholder logic for fetching data from Facebook API
         return "Data fetched from Facebook";
     }
 
@@ -34,7 +33,8 @@ public class Facebook implements SocialMediaPlatform {
         return apiUrl;
     }
 
-    public class FacebookPost {
+    // nested class for a post analysis
+    public static class FacebookPost {
         private String postTitle;
         private int likes;
         private int shares;
@@ -75,14 +75,14 @@ public class Facebook implements SocialMediaPlatform {
         public String getPostType() {
             return postType;
         }
-    }
 
-    // Analyze content performance based on hashtags
-    public Map<String, Integer> analyzeContentPerformance(List<String> hashtags) {
-        Map<String, Integer> performanceMetrics = new HashMap<>();
-        for (String hashtag : hashtags) {
-            performanceMetrics.put(hashtag, performanceMetrics.getOrDefault(hashtag, 0) + 1);
+        // Analyze content performance based on hashtags
+        public Map<String, Integer> analyzeContentPerformance(ArrayList<String> hashtags) {
+            Map<String, Integer> performanceMetrics = new HashMap<>();
+            for (String hashtag : hashtags) {
+                performanceMetrics.put(hashtag, performanceMetrics.getOrDefault(hashtag, 0) + 1);
+            }
+            return performanceMetrics;
         }
-        return performanceMetrics;
     }
 }
